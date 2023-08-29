@@ -1,0 +1,38 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --container-width: 1200px;
+  --container-offset: 16px;
+
+  --yellow-100: #e1c764;
+  --yellow-200: #d1ab35;
+  --yellow-900: #936a2c;
+  --white: #ffffff;
+  --black: #0d0c13;
+}
+
+body {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+a {
+  text-decoration: none;
+  color: var(--yellow-200);
+}
+
+.container {
+  max-width: var(--container-width);
+  padding: 0 var(--container-offset);
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 998px) {
+    
+}
