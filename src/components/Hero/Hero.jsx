@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className='hero' id='hero'>
+    <section className='hero relative' id='hero'>
       <div className='container'>
         <div className='hero__wrapper'>
           <h1 className='hero__title'>PREMIUM DETALING CENTER</h1>

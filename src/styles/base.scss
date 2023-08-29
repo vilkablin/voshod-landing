@@ -7,8 +7,10 @@
 }
 
 :root {
-  --container-width: 1200px;
+  --container-width: 1400px;
   --container-offset: 16px;
+
+  --font-size: 16px;
 
   --yellow-100: #e1c764;
   --yellow-200: #d1ab35;
@@ -27,12 +29,44 @@ a {
   color: var(--yellow-200);
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
 .container {
   max-width: var(--container-width);
   padding: 0 var(--container-offset);
   margin: 0 auto;
 }
 
-@media screen and (max-width: 998px) {
-    
+@for $i from 0 through 10 {
+  .t-#{$i} {
+    top: #{$i * 10}px;
+  }
+
+  .l-#{$i} {
+    left: #{$i * 10};
+  }
+
+  .r-#{$i} {
+    right: #{$i * 10};
+  }
+
+  .b-#{$i} {
+    bottom: #{$i * 10};
+  }
+}
+
+.divider {
+  margin: calc(1.5 * var(--container-offset)) 0;
+  height: 3px;
+  background: var(--white);
+  width: 30px;
+  -webkit-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
 }

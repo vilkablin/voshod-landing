@@ -5,18 +5,19 @@ import logotype from "../../assets/images/logo.png";
 
 const Header = () => {
   return (
-    <header className='header' id='header'>
+    <header className='header absolute t-0 r-0 l-0' id='header'>
       <div className='container header__wrapper'>
-        <div className='logo header-logo'>
-          <Image
-            width={90}
-            src={logotype}
-            alt='Логотип детейлинг сервиса VOSHOD'
-            objectFit='cover'
-          />
-        </div>
-
         <nav className='header__nav'>
+          <div className='logo header-logo'>
+            <Link href='/'>
+              <Image
+                width={90}
+                src={logotype}
+                alt='Логотип детейлинг сервиса VOSHOD'
+                objectFit='cover'
+              />
+            </Link>
+          </div>
           <ul className='menu header__menu'>
             <li>
               <Link href='/' className='menu__link'>
