@@ -1,58 +1,89 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import logotype from "../../assets/images/logo.png";
 
-const Header = () => {
+import styles from "./Header.module.scss";
+import Container from "../Container/Container";
+import { usePathname } from "next/navigation";
+
+const links = [
+  {
+    text: "Каталог",
+    url: "/catalog",
+  },
+  {
+    text: "О центре",
+    url: "/about",
+  },
+  {
+    text: "Наши проекты",
+    url: "/works",
+  },
+  {
+    text: "Прайс-лист",
+    url: "/price",
+  },
+  {
+    text: "Контакты",
+    url: "/contacts",
+  },
+];
+
+const Logotype = () => {
   return (
-    <header className='header absolute t-0 r-0 l-0' id='header'>
-      <div className='container header__wrapper'>
-        <nav className='header__nav'>
-          <div className='logo header-logo'>
-            <Link href='/'>
-              <Image
-                width={90}
-                src={logotype}
-                alt='Логотип детейлинг сервиса VOSHOD'
-                objectFit='cover'
-              />
+    <div className={styles.logo}>
+      <Link href='/'>
+        <Image
+          width={90}
+          src={logotype}
+          alt='Логотип детейлинг сервиса VOSHOD'
+          objectFit='cover'
+        />
+      </Link>
+    </div>
+  );
+};
+
+const HeaderMenu = ({ links }) => {
+  return (
+    <ul className={`${styles.menu} ${styles.headerMenu}`}>
+      {links.map(({ text, url }, index) => {
+        return (
+          <li key={index}>
+            <Link href={url} className={styles.link}>
+              {text}
             </Link>
-          </div>
-          <ul className='menu header__menu'>
-            <li>
-              <Link href='/' className='menu__link'>
-                Каталог
-              </Link>
-            </li>
-            <li>
-              <Link href='/' className='menu__link'>
-                О центре
-              </Link>
-            </li>
-            <li>
-              <Link href='/' className='menu__link'>
-                Наши проекты
-              </Link>
-            </li>
-            <li>
-              <Link href='/' className='menu__link'>
-                Прайс-лист
-              </Link>
-            </li>
-            <li>
-              <Link href='/' className='menu__link'>
-                Контакты
-              </Link>
-            </li>
-          </ul>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
+const Header = () => {
+  const path = usePathname();
+
+  const classNames = `${styles.header}${
+    path === "/" ? " absolute t-0 r-0 l-0" : ""
+  }`;
+
+  return (
+    <header className={classNames} id='header'>
+      <Container classNames={styles.wrapper}>
+        <nav className={styles.nav}>
+          <Logotype />
+          <HeaderMenu links={links} />
         </nav>
 
-        <div className='header__menu'>
+        <div className={styles.headerMenu}>
           <Link href='tel:+78432538242' className='header__action'>
             +7 (843) 253-82-42
           </Link>
         </div>
-      </div>
+      </Container>
     </header>
   );
 };

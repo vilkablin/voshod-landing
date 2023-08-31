@@ -3,6 +3,8 @@
     height: 600px;
   }
   .service {
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
@@ -15,7 +17,7 @@
       width: 100%;
       object-fit: cover;
 
-      filter: grayscale(0) blur(4px);
+      filter: grayscale(0) blur(2px);
 
       transition: filter 0.5s ease-in-out;
     }

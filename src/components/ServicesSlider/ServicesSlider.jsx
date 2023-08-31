@@ -3,14 +3,15 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import Container from "../Container/Container";
+import Divider from "../Divider/Divider";
+
 import "swiper/css";
-import "swiper/css/navigation";
 
 import image1 from "../../assets/images/7.jpg";
 import image2 from "../../assets/images/15.jpg";
 import image3 from "../../assets/images/16.jpg";
 import image4 from "../../assets/images/17.jpg";
-import Divider from "../Divider/Divider";
 
 const SLIDES = [
   {
@@ -46,12 +47,13 @@ const SLIDES = [
 const ServicesSlider = () => {
   return (
     <section className='services' id='services'>
-      <div className='container'>
+      <Container>
         <div className='services__wrapper'>
           <Swiper
             className='services-slider'
-            slidesPerView={3}
-            spaceBetween={32}
+            slidesPerView='auto'
+            loop={true}
+            centeredSlides
           >
             {SLIDES.map((slide) => {
               return (
@@ -71,7 +73,7 @@ const ServicesSlider = () => {
             })}
           </Swiper>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
