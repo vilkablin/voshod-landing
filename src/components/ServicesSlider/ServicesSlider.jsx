@@ -52,8 +52,11 @@ const ServicesSlider = () => {
           <Swiper
             className='services-slider'
             slidesPerView='3'
+            slidesPerGroup='1'
+            initialSlide='0'
             loop={true}
-            centeredSlides
+            direction="reverse"
+           
           >
             {SLIDES.map((slide) => {
               return (
