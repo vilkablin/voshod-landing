@@ -55,7 +55,6 @@ const ServicesSlider = () => {
             slidesPerGroup='1'
             initialSlide='0'
             loop={true}
-            direction="reverse"
            
           >
             {SLIDES.map((slide) => {
