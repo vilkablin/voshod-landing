@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import Container from "../Container/Container";
 import Image from "next/image";
-i
+
 
 import image1 from "../../assets/images/quarant.svg";
 import image2 from "../../assets/images/settings.svg";

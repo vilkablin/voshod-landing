@@ -35,19 +35,19 @@ const Popular = () => {
 
       <Container>
         <div className="cards">
-          {POPULARS.map((card, index) => {
+          {POPULARS.map((popular, index) => {
             return (
-              <div className="card" key={card.id}>
+              <div className="card" key={popular.id}>
                 <div className="card__bg">
                   <Image
-                    src={card.image_url}
-                    alt={card.title}
+                    src={popular.image_url}
+                    alt={popular.title}
                     objectFit="cover"
                   />
                 </div>
                 <div className="card-info">
-                  <h2>{card.title}</h2>
-                  <p>{card.text}</p>
+                  <h2>{popular.title}</h2>
+                  <p>{popular.text}</p>
                   <Link href="/catalog" target="_blank">
                     <span>Смотреть</span>
                   </Link>

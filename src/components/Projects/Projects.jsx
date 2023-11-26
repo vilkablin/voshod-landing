@@ -9,7 +9,7 @@ import image2 from "../../assets/images/2.jpg";
 import image3 from "../../assets/images/5.jpg";
 
 
-const CARDS = [
+const PROJECTS = [
   {
     id: 1,
     title: "Бронирование пленкой Mercedes",
@@ -25,7 +25,7 @@ const CARDS = [
     image_url: image2,
   },
   {
-    id: 2,
+    id: 3,
     title: "Виниловая пленка KIA",
     text: "kia",
     href: "/services/optic",
@@ -48,16 +48,16 @@ const Projects = () => {
       <Container>
         <div className="projects-content">
         <div className="cards">
-          {CARDS.map((card, index) => {
+          {PROJECTS.map((project, index) => {
             return (
-              <div className="card" key={card.id}>
-                <h3>{card.title}</h3>
+              <div className="card" key={project.id}>
+                <h3>{project.title}</h3>
                 <Link href="https://avavion.ru" target="_blank">
-                  <p class="card-p">{card.text} </p>
+                  <p className="card-p">{project.text} </p>
                 </Link>
                 <Image
-                  src={card.image_url}
-                  alt={card.title}
+                  src={project.image_url}
+                  alt={project.title}
                   className="card__image"
                 />
               </div>

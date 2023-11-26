@@ -1,7 +1,7 @@
+import Footer from "@/components/Footer/Footer";
 import "../styles/index.scss";
 import Header from "@/components/Header/Header";
 import { Rubik } from "next/font/google";
-import Footer from "@/components/Footer/Footer";
 
 const rubik = Rubik({ subsets: ["cyrillic"] });
 
